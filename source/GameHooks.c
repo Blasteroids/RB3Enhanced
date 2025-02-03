@@ -72,7 +72,8 @@ void *GameDestructHook(void *theGame, int r4)
 #ifdef RB3E_XBOX
     // When not in-game, turn off the stage-kit lights.
     // Fixes the RB3 bug(?) that leaves 2 red leds on when exiting the score view screen.
-    StagekitSetStateHook(0x00, 0xFF);    
+	// Adjusted to also work with 3rd party kit.
+    StagekitSetStateHook(0xFF, 0xFF);    
 #endif
 
     return GameDestruct(theGame, r4);
